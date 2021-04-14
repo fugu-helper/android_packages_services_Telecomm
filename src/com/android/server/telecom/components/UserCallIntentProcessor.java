@@ -75,11 +75,6 @@ public class UserCallIntentProcessor {
      */
     public void processIntent(Intent intent, String callingPackageName,
             boolean canCallNonEmergency) {
-        // Ensure call intents are not processed on devices that are not capable of calling.
-        if (!isVoiceCapable()) {
-            return;
-        }
-
         String action = intent.getAction();
 
         if (Intent.ACTION_CALL.equals(action) ||
